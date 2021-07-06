@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 99c9a746a2e111b4cb787de3f40334c0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8725894748694059625
+    second: boot_status_texts_0
+  - first:
+      213: 1471895558423108842
+    second: boot_status_texts_1
+  - first:
+      213: 8162904855387115694
+    second: boot_status_texts_2
+  - first:
+      213: 8952466049834977964
+    second: boot_status_texts_3
+  - first:
+      213: 8035262416973200166
+    second: boot_status_texts_4
+  - first:
+      213: 6624329761130036050
+    second: boot_status_texts_5
+  - first:
+      213: 2866147895352447194
+    second: boot_status_texts_6
+  - first:
+      213: 3422420651970048921
+    second: boot_status_texts_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +99,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boot_status_texts_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a1b5bca0b981970800000000000000
+      internalID: 8725894748694059625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 45.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecd84246393d6410800000000000000
+      internalID: 1471895558423108842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea019a097b6784170800000000000000
+      internalID: 8162904855387115694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 30.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa882ca07c8d3c70800000000000000
+      internalID: 8952466049834977964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bfbb8789cf28f60800000000000000
+      internalID: 8035262416973200166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 15.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b343f02d85eeb50800000000000000
+      internalID: 6624329761130036050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad05738435a96c720800000000000000
+      internalID: 2866147895352447194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boot_status_texts_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0.75
+        width: 128
+        height: 15.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993b2a04371ee7f20800000000000000
+      internalID: 3422420651970048921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
