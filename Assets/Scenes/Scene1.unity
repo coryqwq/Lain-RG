@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &101876394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,8 +206,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 1358070366}
   buttonName: []
   video: {fileID: 1047587908}
-  title: {fileID: 0}
-  artist: {fileID: 0}
+  title: {fileID: 728812037}
+  artist: {fileID: 2143206482}
   songTitle: []
   songArtist: []
 --- !u!114 &101876397
@@ -486,7 +486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &177927647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -548,8 +548,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 1358070366}
   buttonName: []
   video: {fileID: 1047587908}
-  title: {fileID: 0}
-  artist: {fileID: 0}
+  title: {fileID: 728812037}
+  artist: {fileID: 2143206482}
   songTitle: []
   songArtist: []
 --- !u!114 &177927650
@@ -753,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2931101320852185544, guid: 1120ad12e1e2e41409fbce400f4e45ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2931101320852185545, guid: 1120ad12e1e2e41409fbce400f4e45ba, type: 3}
       propertyPath: m_Pivot.x
@@ -1838,7 +1838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612511135411119139, guid: 3aacdc70681cf8a43836828af7c2e669, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aacdc70681cf8a43836828af7c2e669, type: 3}
@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
+  m_RepeatDelay: 0.35
   m_ForceModuleActive: 0
 --- !u!114 &727470791
 MonoBehaviour:
@@ -2186,7 +2186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325154341500535487, guid: 958c439bb6632ad4284e50197a78cd9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958c439bb6632ad4284e50197a78cd9f, type: 3}
@@ -2525,7 +2525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1303242031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2587,8 +2587,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 1358070366}
   buttonName: []
   video: {fileID: 1047587908}
-  title: {fileID: 0}
-  artist: {fileID: 0}
+  title: {fileID: 728812037}
+  artist: {fileID: 2143206482}
   songTitle: []
   songArtist: []
 --- !u!114 &1303242034
@@ -2792,7 +2792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324335244978696616, guid: ff061b9b97e526241841175d8a3ffcb2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4324335244978696619, guid: ff061b9b97e526241841175d8a3ffcb2, type: 3}
       propertyPath: m_Pivot.x
@@ -3359,7 +3359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1696540590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3421,8 +3421,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 1358070366}
   buttonName: []
   video: {fileID: 1047587908}
-  title: {fileID: 0}
-  artist: {fileID: 0}
+  title: {fileID: 728812037}
+  artist: {fileID: 2143206482}
   songTitle: []
   songArtist: []
 --- !u!114 &1696540593
@@ -3851,8 +3851,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908878471}
+  - component: {fileID: 1908878472}
   m_Layer: 0
-  m_Name: song info
+  m_Name: GameState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3872,6 +3873,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908878472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908878470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe1b98ff9db8b347a7b476077d7e68a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1942968665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,7 +4143,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: SONG TITLE
+  m_Text: 'SONG ARTIST
+
+'
 --- !u!222 &2143206483
 CanvasRenderer:
   m_ObjectHideFlags: 0
