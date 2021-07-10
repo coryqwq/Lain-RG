@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class CrosshairFollow : MonoBehaviour
+public class CrosshairFollowButton : MonoBehaviour
 {
     public float duration;
     public float elasped;
