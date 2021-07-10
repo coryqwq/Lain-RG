@@ -9,9 +9,12 @@ public class CircleController : MonoBehaviour
     public float elasped;
 
     EventSystem eventSys;
+
+    RippleEffect rippleEffectScript;
     // Start is called before the first frame update
     void Start()
     {
+        rippleEffectScript = FindObjectOfType<RippleEffect>();
         eventSys = FindObjectOfType<EventSystem>();
     }
 
@@ -53,6 +56,7 @@ public class CircleController : MonoBehaviour
     void EnableHitBox(int points)
     {
         hitbox.enabled = true;
+        rippleEffectScript.Emit(Camera.main.WorldToViewportPoint(GetComponent<RectTransform>().transform.localPosition));
         Debug.Log(points);
         GameObject.Destroy(gameObject);
     }
