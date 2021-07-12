@@ -72,8 +72,8 @@ public class RippleEffect : MonoBehaviour
         var c = GetComponent<Camera>();
 
         material.SetVector("_Drop1", droplets[0].MakeShaderParameter(c.aspect));
-        //material.SetVector("_Drop2", droplets[1].MakeShaderParameter(c.aspect));
-        //material.SetVector("_Drop3", droplets[2].MakeShaderParameter(c.aspect));
+        material.SetVector("_Drop2", droplets[1].MakeShaderParameter(c.aspect));
+        material.SetVector("_Drop3", droplets[2].MakeShaderParameter(c.aspect));
 
         material.SetColor("_Reflection", reflectionColor);
         material.SetVector("_Params1", new Vector4(c.aspect, 1, 1 / waveSpeed, 0));
@@ -82,10 +82,10 @@ public class RippleEffect : MonoBehaviour
 
     void Awake()
     {
-        droplets = new Droplet[1];
+        droplets = new Droplet[3];
         droplets[0] = new Droplet();
-        //droplets[1] = new Droplet();
-        //droplets[2] = new Droplet();
+        droplets[1] = new Droplet();
+        droplets[2] = new Droplet();
 
         gradTexture = new Texture2D(2048, 1, TextureFormat.Alpha8, false);
         gradTexture.wrapMode = TextureWrapMode.Clamp;
