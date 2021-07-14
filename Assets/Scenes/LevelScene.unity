@@ -308,19 +308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 9166242803362884645, guid: cc1dd27821e60624cbe2aa1fc2e44caa, type: 3}
-  timestamp:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
+  timestamp: []
   elasped: 0
   index: 0
+  offset: 0
 --- !u!1 &420995891
 GameObject:
   m_ObjectHideFlags: 0

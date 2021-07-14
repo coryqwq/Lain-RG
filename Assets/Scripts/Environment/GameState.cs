@@ -97,8 +97,8 @@ public class GameState : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
-            PlayerPrefs.SetInt("level unlock", PlayerPrefs.GetInt("level passed") + 1);
-            SetVideoClip(PlayerPrefs.GetInt("level pass"));
+            PlayerPrefs.SetInt("level unlock", PlayerPrefs.GetInt("level select") + 1);
+            SetVideoClip(PlayerPrefs.GetInt("level select"));
             StartCoroutine(DelayStartVideo(3));
             StartCoroutine(DelayEndVideo((float)videoPlayer.length));
             StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "TransitionScene"));
