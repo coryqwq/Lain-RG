@@ -1234,6 +1234,12 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 0580c8f6b80adcc4aad3785be539604f, type: 3}
   - {fileID: 32900000, guid: 9d3c1fac9a940d5468f4b912afde0dfd, type: 3}
   flag: 0
+  volume:
+  - 0.6
+  - 0.5
+  - 0.4
+  - 0.4
+  - 1
 --- !u!1 &2004033657
 GameObject:
   m_ObjectHideFlags: 0

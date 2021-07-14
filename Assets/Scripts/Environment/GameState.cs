@@ -14,20 +14,58 @@ public class GameState : MonoBehaviour
     public VideoClip[] videoClip;
 
     public bool flag = false;
+
+    public float[] volume;
     // Start is called before the first frame update
     void Start()
     {
         eventSys = FindObjectOfType<EventSystem>();
         healthBarScript = FindObjectOfType<HealthBar>();
 
+        if (SceneManager.GetActiveScene().name == "FirstCutScene")
+        {
+            PlayerPrefs.SetInt("load", 0);
+
+            if (PlayerPrefs.GetInt("first load") == 0)
+            {
+                video.SetActive(true);
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 1, "TransitionScene"));
+            }
+            else if (PlayerPrefs.GetInt("first load") == 1)
+            {
+                SceneManager.LoadScene("TransitionScene");
+            }
+        }
+
         if (SceneManager.GetActiveScene().name == "TransitionScene")
         {
-            StartCoroutine(DelaySceneLoad(2, "LevelScene"));
+            PlayerPrefs.SetInt("first load", 1);
+
+            if (PlayerPrefs.GetInt("load") == 0)
+            {
+                StartCoroutine(DelaySceneLoad(1, "MenuScene"));
+            }
+            if (PlayerPrefs.GetInt("load") == 1)
+            {
+                StartCoroutine(DelaySceneLoad(1, "LevelScene"));
+            }
         }
+
+        if (SceneManager.GetActiveScene().name == "MenuScene")
+        {
+            PlayerPrefs.SetInt("load", 1);
+        }
+
+        if (SceneManager.GetActiveScene().name == "LevelScene")
+        {
+            SetVideoClip(PlayerPrefs.GetInt("level select"));
+        }
+
         if (SceneManager.GetActiveScene().name == "FailScene")
         {
             StartCoroutine(DelaySceneLoad(3, "MenuScene"));
         }
+
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
             SetVideoClip(PlayerPrefs.GetInt("level passed"));
@@ -42,6 +80,7 @@ public class GameState : MonoBehaviour
         {
             if (i == index)
             {
+                videoPlayer.SetDirectAudioVolume(0, volume[i]);
                 videoPlayer.clip = videoClip[i];
             }
         }

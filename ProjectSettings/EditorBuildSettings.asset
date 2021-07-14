@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 0aa4305093377f44d99f8af3dcd363ab
+  - enabled: 1
+    path: Assets/Scenes/TransitionScene.unity
+    guid: 5b300fd1b8429b54abeddd2ba2e3ee45
   m_configObjects: {}
