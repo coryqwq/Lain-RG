@@ -11,6 +11,8 @@ public class GameState : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject video;
 
+    public VideoClip[] cutscene;
+
     public bool flag = false;
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,7 @@ public class GameState : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         video.SetActive(true);
+        
         videoPlayer.Play();
     }
 }
