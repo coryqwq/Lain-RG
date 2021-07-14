@@ -34,10 +34,21 @@ public class GameState : MonoBehaviour
 
             if (PlayerPrefs.GetInt("first load") == 0)
             {
+                PlayerPrefs.SetInt("first load", 1);
+
+                SetVideoClip(0);
                 video.SetActive(true);
                 StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 1, "TransitionScene"));
             }
             else if (PlayerPrefs.GetInt("first load") == 1)
+            {
+                PlayerPrefs.SetInt("first load", 2);
+
+                SetVideoClip(1);
+                video.SetActive(true);
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 1, "TransitionScene"));
+            }
+            else if (PlayerPrefs.GetInt("first load") == 2)
             {
                 SceneManager.LoadScene("TransitionScene");
             }
@@ -45,8 +56,6 @@ public class GameState : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "TransitionScene")
         {
-            PlayerPrefs.SetInt("first load", 1);
-
             if (PlayerPrefs.GetInt("load") == 0)
             {
                 StartCoroutine(DelaySceneLoad(1, "MenuScene"));
@@ -89,14 +98,13 @@ public class GameState : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
             PlayerPrefs.SetInt("level unlock", PlayerPrefs.GetInt("level passed") + 1);
-            SetVideoClip(PlayerPrefs.GetInt("level passed"));
+            SetVideoClip(PlayerPrefs.GetInt("level pass"));
             StartCoroutine(DelayStartVideo(3));
             StartCoroutine(DelayEndVideo((float)videoPlayer.length));
             StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "TransitionScene"));
             PlayerPrefs.SetInt("load", 0);
         }
     }
-
     void SetVideoClip(int index)
     {
         for (int i = 0; i < videoClip.Length; i++)
@@ -104,6 +112,7 @@ public class GameState : MonoBehaviour
             if (i == index)
             {
                 videoPlayer.SetDirectAudioVolume(0, volume[i]);
+                videoPlayer.clip = null;
                 videoPlayer.clip = videoClip[i];
             }
         }

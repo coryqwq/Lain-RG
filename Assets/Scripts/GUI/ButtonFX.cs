@@ -48,7 +48,7 @@ public class ButtonFX : MonoBehaviour
             {
                 PlayerPrefs.SetInt("level select", i);
                 PlayerPrefs.SetInt("level pass", i);
-
+                Debug.Log(PlayerPrefs.GetInt("level pass"));
                 title.text = songTitle[i];
                 artist.text = songArtist[i];
 
