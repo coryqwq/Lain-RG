@@ -881,6 +881,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2074315285}
   video: {fileID: 1279114288}
+  videoClip:
+  - {fileID: 32900000, guid: dd21204ca9cd20e409b782875d70e0ef, type: 3}
+  - {fileID: 32900000, guid: 5c0a2e971595a254184866b10c22bad8, type: 3}
+  - {fileID: 32900000, guid: ac2416891716da84ca5c0a001ff6edbf, type: 3}
+  - {fileID: 32900000, guid: c3337da1a4062cd4dbe05e39ac09de43, type: 3}
+  - {fileID: 32900000, guid: 7d1e1b35c90e8df4eae8c3e9cce77c0e, type: 3}
   flag: 0
 --- !u!1 &2074315284
 GameObject:
@@ -923,7 +929,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.2
+  - 0.621
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00

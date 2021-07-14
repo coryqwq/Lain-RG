@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class ButtonFX : MonoBehaviour
 {
     public Animator buttonAnim;
@@ -17,6 +18,13 @@ public class ButtonFX : MonoBehaviour
     public Text artist;
     public string[] songTitle;
     public string[] songArtist;
+
+    public float[] volume;
+
+    public void StartLevel()
+    {
+        SceneManager.LoadScene("TransitionScene");
+    }
     public void Highlight()
     {
         if (FindObjectOfType<EventSystem>().currentSelectedGameObject != gameObject)
@@ -38,9 +46,13 @@ public class ButtonFX : MonoBehaviour
         {
             if (gameObject.name == buttonName[i])
             {
+                PlayerPrefs.SetInt("level select", i);
+                PlayerPrefs.SetInt("level pass", i);
+
                 title.text = songTitle[i];
                 artist.text = songArtist[i];
 
+                videoPlayer.SetDirectAudioVolume(0,volume[i]);
                 videoPlayer.Stop();
                 videoPlayer.clip = preview[i];
                 videoPlayer.Play();

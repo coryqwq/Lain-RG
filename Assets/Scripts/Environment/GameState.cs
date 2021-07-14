@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject video;
 
-    public VideoClip[] cutscene;
+    public VideoClip[] videoClip;
 
     public bool flag = false;
     // Start is called before the first frame update
@@ -20,14 +20,30 @@ public class GameState : MonoBehaviour
         eventSys = FindObjectOfType<EventSystem>();
         healthBarScript = FindObjectOfType<HealthBar>();
 
+        if (SceneManager.GetActiveScene().name == "TransitionScene")
+        {
+            StartCoroutine(DelaySceneLoad(2, "LevelScene"));
+        }
         if (SceneManager.GetActiveScene().name == "FailScene")
         {
             StartCoroutine(DelaySceneLoad(3, "MenuScene"));
         }
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
+            SetVideoClip(PlayerPrefs.GetInt("level passed"));
             StartCoroutine(DelayStartVideo(3));
             StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "MenuScene"));
+        }
+    }
+
+    void SetVideoClip(int index)
+    {
+        for (int i = 0; i < videoClip.Length; i++)
+        {
+            if (i == index)
+            {
+                videoPlayer.clip = videoClip[i];
+            }
         }
     }
 
@@ -58,7 +74,7 @@ public class GameState : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         video.SetActive(true);
-        
+
         videoPlayer.Play();
     }
 }
