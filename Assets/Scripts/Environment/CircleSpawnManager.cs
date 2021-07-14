@@ -11,14 +11,13 @@ public class CircleSpawnManager : MonoBehaviour
     public int index = 0;
     public float offset;
     string path;
-    public string[] lines;
+    public string[] log;
     // Start is called before the first frame update
     void Start()
     {
         Directory.CreateDirectory(Application.streamingAssetsPath + "/Song Timestamps/");
         CreateFile();
-        lines = File.ReadAllLines(path);
-        timestamp = Array.ConvertAll(lines, float.Parse);
+        ReadAndConvertFile();
     }
 
     public void CreateFile()
@@ -29,23 +28,38 @@ public class CircleSpawnManager : MonoBehaviour
             File.WriteAllText(path, "");
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-        elasped += Time.deltaTime;
+    public void ReadAndConvertFile()
+    {
+        log = File.ReadAllLines(path);
+        timestamp = Array.ConvertAll(log, float.Parse);
+    }
+
+    public void WriteFile()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log(elasped);
             File.AppendAllText(path, elasped.ToString() + "\n");
         }
-        /*
-        if(index < timestamp.Length && elasped >= timestamp[index] - offset)
+    }
+
+    public void SpawnManager()
+    {
+        if (index < timestamp.Length && elasped >= timestamp[index] - offset)
         {
             SpawnCircle();
             index++;
         }
-        */
+    }
+    // Update is called once per frame
+    void Update()
+    {
+
+        elasped += Time.deltaTime;
+
+        WriteFile();
+        //SpawnManager();
     }
 
     void SpawnCircle()

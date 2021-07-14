@@ -311,7 +311,8 @@ MonoBehaviour:
   timestamp: []
   elasped: 0
   index: 0
-  offset: 0
+  offset: 1.66667
+  log: []
 --- !u!1 &420995891
 GameObject:
   m_ObjectHideFlags: 0
