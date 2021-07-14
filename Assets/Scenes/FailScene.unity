@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 1130521893}
   - component: {fileID: 1130521892}
   m_Layer: 5
-  m_Name: no data found
+  m_Name: load unsuccessful
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +608,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 103, y: 8}
+  m_SizeDelta: {x: 137, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130521892
 MonoBehaviour:
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b9f6b2227602c064fa61e54e4ee24f5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9479f582c5ac2694cb38ccb1d1766065, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -835,3 +835,6 @@ MonoBehaviour:
   videoClip: []
   flag: 0
   volume: []
+  lockedLevel: []
+  unlockedLevel: []
+  winSceneText: []

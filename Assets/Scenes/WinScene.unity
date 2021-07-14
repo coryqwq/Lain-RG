@@ -965,11 +965,11 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 7d1e1b35c90e8df4eae8c3e9cce77c0e, type: 3}
   flag: 0
   volume:
-  - 0.6
-  - 0.6
-  - 0.6
-  - 0.6
-  - 0.6
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   lockedLevel: []
   unlockedLevel: []
   winSceneText:

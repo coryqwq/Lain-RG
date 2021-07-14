@@ -813,8 +813,8 @@ MonoBehaviour:
   - {fileID: 0}
   flag: 0
   volume:
-  - 0.7
-  - 0.7
+  - 1
+  - 0.3
   lockedLevel: []
   unlockedLevel: []
   winSceneText: []
