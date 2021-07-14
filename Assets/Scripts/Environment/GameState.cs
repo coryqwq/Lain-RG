@@ -91,7 +91,7 @@ public class GameState : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "FailScene")
         {
-            StartCoroutine(DelaySceneLoad(1, "TransitionScene"));
+            StartCoroutine(DelaySceneLoad(3, "TransitionScene"));
             PlayerPrefs.SetInt("load", 0);
         }
 

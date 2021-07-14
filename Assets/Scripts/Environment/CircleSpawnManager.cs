@@ -5,16 +5,25 @@ using UnityEngine;
 public class CircleSpawnManager : MonoBehaviour
 {
     public GameObject circle;
+    public float[] timestamp;
+    public float elasped;
+    public int index = 0;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnCircle", 0, 1f);
+        //InvokeRepeating("SpawnCircle", 0, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        elasped += Time.deltaTime;
+
+        if(index < timestamp.Length && elasped >= timestamp[index])
+        {
+            SpawnCircle();
+            index++;
+        }
     }
 
     void SpawnCircle()
