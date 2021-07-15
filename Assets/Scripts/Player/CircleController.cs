@@ -41,30 +41,30 @@ public class CircleController : MonoBehaviour
     }
     public void SetFlag0()
     {
-        flag = 0;
+        flag = 1;
     }
 
     public void SetFlag1()
     {
-        flag = 1;
+        flag = 2;
     }
 
     public void SetFlag2()
     {
-        flag = 2;
+        flag = 3;
     }
 
     public void Check()
     {
         switch (flag)
         {
-            case 0:
+            case 1:
                 EnableHitBox(points[0]);
                 break;
-            case 1:
+            case 2:
                 EnableHitBox(points[1]);
                 break;
-            case 2:
+            case 3:
                 EnableHitBox(points[2]);
                 break;
             default:
@@ -87,13 +87,6 @@ public class CircleController : MonoBehaviour
     }
     public void PlaySfx()
     {
-        if (flag == 2)
-        {
-            audioSource.PlayOneShot(sfx[0]);
-        }
-        else if (flag == 1 || flag == 0)
-        {
-            audioSource.PlayOneShot(sfx[1]);
-        }
+        audioSource.PlayOneShot(sfx[0]);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 public class GameState : MonoBehaviour
 {
-    EventSystem eventSys;
+    public EventSystem eventSys;
     HealthBar healthBarScript;
     public VideoPlayer videoPlayer;
     public GameObject video;
@@ -25,7 +25,10 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(GameObject.Find("AudioObject"));
+        if (GameObject.Find("AudioObject") != null)
+        {
+            DontDestroyOnLoad(GameObject.Find("AudioObject"));
+        }
 
         eventSys = FindObjectOfType<EventSystem>();
         healthBarScript = FindObjectOfType<HealthBar>();
@@ -72,12 +75,24 @@ public class GameState : MonoBehaviour
         {
             if (lockedLevel[PlayerPrefs.GetInt("level unlock")] != null)
             {
+                //unlock next level
                 for (int i = 1; i < lockedLevel.Length; i++)
                 {
                     if (lockedLevel[i].activeInHierarchy == true && PlayerPrefs.GetInt("level unlock") == i)
                     {
                         lockedLevel[i].SetActive(false);
                         unlockedLevel[i].SetActive(true);
+
+                    }
+                }
+
+                //unlock all previous levels
+                for (int i = lockedLevel.Length - 1; i > 1; i--)
+                {
+                    if (unlockedLevel[i].activeInHierarchy == true)
+                    {
+                        lockedLevel[i - 1].SetActive(false);
+                        unlockedLevel[i - 1].SetActive(true);
                     }
                 }
             }
@@ -103,8 +118,17 @@ public class GameState : MonoBehaviour
             SetVideoClip(PlayerPrefs.GetInt("level select"));
             StartCoroutine(DelayStartVideo(3));
             StartCoroutine(DelayEndVideo((float)videoPlayer.length));
-            StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "TransitionScene"));
             PlayerPrefs.SetInt("load", 0);
+
+            if(PlayerPrefs.GetInt("level unlock") != 5)
+            {
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "TransitionScene"));
+
+            }
+            else
+            {
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 6, "TitleScene"));
+            }
         }
     }
     void SetVideoClip(int index)
@@ -152,7 +176,14 @@ public class GameState : MonoBehaviour
         if (winSceneText[0] != null)
         {
             winSceneText[0].SetActive(false);
-            winSceneText[1].SetActive(true);
+            if(PlayerPrefs.GetInt("level unlock") != 5)
+            {
+                winSceneText[1].SetActive(true);
+            }
+            else
+            {
+                winSceneText[2].SetActive(true);
+            }
         }
     }
 

@@ -199,5 +199,5 @@ MonoBehaviour:
   flag: 0
   elasped: 0
   sfx:
-  - {fileID: 8300000, guid: 97ff3e42044495c45b4c5b0f104797c0, type: 3}
-  - {fileID: 8300000, guid: cbf978d141d4b7f41bad25554a09d115, type: 3}
+  - {fileID: 8300000, guid: 7f77672bb1b01fa40b8a063c12d06ea4, type: 3}
+  - {fileID: 8300000, guid: 7f77672bb1b01fa40b8a063c12d06ea4, type: 3}

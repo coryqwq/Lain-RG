@@ -37,7 +37,7 @@ public class CircleSpawnManager : MonoBehaviour
 
     public void WriteFile()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log(elasped);
             File.AppendAllText(path, elasped.ToString() + "\n");

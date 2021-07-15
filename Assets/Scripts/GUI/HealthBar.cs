@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //currentSize -= Time.deltaTime * speed;
+        currentSize -= Time.deltaTime * speed;
         healthBar.sizeDelta = new Vector2(currentSize, healthBar.sizeDelta.y);
     }
 }
