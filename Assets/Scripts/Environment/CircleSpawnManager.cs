@@ -58,8 +58,8 @@ public class CircleSpawnManager : MonoBehaviour
 
         elasped += Time.deltaTime;
 
-        WriteFile();
-        //SpawnManager();
+        //WriteFile();
+        SpawnManager();
     }
 
     void SpawnCircle()

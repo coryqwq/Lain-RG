@@ -21,9 +21,24 @@ public class ButtonFX : MonoBehaviour
 
     public float[] volume;
 
+    public AudioClip[] sfx;
+
+    public GameObject audioObject;
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioObject = GameObject.Find("AudioObject");
+        audioSource = audioObject.GetComponent<AudioSource>();
+    }
     public void StartLevel()
     {
         SceneManager.LoadScene("TransitionScene");
+    }
+    public void StartLevelSelectMenu()
+    {
+
+        SceneManager.LoadScene("FirstCutScene");
     }
     public void Highlight()
     {
@@ -65,5 +80,21 @@ public class ButtonFX : MonoBehaviour
 
         videoPlayer.Stop();
         video.SetActive(false);
+    }
+
+    public void PlaySfx0()
+    {
+        audioSource.clip = sfx[0];
+        audioSource.Play();
+    }
+    public void PlaySfx1()
+    {
+        audioSource.clip = sfx[1];
+        audioSource.Play();
+    }
+    public void PlaySfx2()
+    {
+        audioSource.clip = sfx[2];
+        audioSource.Play();
     }
 }

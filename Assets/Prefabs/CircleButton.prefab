@@ -125,6 +125,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9166242803362884647}
         m_TargetAssemblyTypeName: CircleController, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9166242803362884647}
+        m_TargetAssemblyTypeName: CircleController, Assembly-CSharp
         m_MethodName: Check
         m_Mode: 1
         m_Arguments:
@@ -184,5 +196,8 @@ MonoBehaviour:
   - 5
   - 10
   - 20
-  flag: 000000
+  flag: 0
   elasped: 0
+  sfx:
+  - {fileID: 8300000, guid: 97ff3e42044495c45b4c5b0f104797c0, type: 3}
+  - {fileID: 8300000, guid: cbf978d141d4b7f41bad25554a09d115, type: 3}

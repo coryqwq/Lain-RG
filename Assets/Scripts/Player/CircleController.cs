@@ -12,12 +12,16 @@ public class CircleController : MonoBehaviour
     EventSystem eventSys;
     RippleEffect rippleEffectScript;
     HealthBar healthBarScript;
+    AudioSource audioSource;
+
+    public AudioClip[] sfx;
     // Start is called before the first frame update
     void Start()
     {
         eventSys = FindObjectOfType<EventSystem>();
         rippleEffectScript = FindObjectOfType<RippleEffect>();
         healthBarScript = FindObjectOfType<HealthBar>();
+        audioSource = FindObjectOfType<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,30 +41,30 @@ public class CircleController : MonoBehaviour
     }
     public void SetFlag0()
     {
-        flag = 1;
+        flag = 0;
     }
 
     public void SetFlag1()
     {
-        flag = 2;
+        flag = 1;
     }
 
     public void SetFlag2()
     {
-        flag = 3;
+        flag = 2;
     }
 
     public void Check()
     {
         switch (flag)
         {
-            case 1:
+            case 0:
                 EnableHitBox(points[0]);
                 break;
-            case 2:
+            case 1:
                 EnableHitBox(points[1]);
                 break;
-            case 3:
+            case 2:
                 EnableHitBox(points[2]);
                 break;
             default:
@@ -74,11 +78,22 @@ public class CircleController : MonoBehaviour
     {
         hitbox.enabled = true;
         rippleEffectScript.Emit(Camera.main.WorldToViewportPoint(GetComponent<RectTransform>().transform.localPosition));
-        if(healthBarScript.currentSize + points >= healthBarScript.maxSize)
+        if (healthBarScript.currentSize + points >= healthBarScript.maxSize)
         {
             points = healthBarScript.maxSize - healthBarScript.currentSize;
         }
         healthBarScript.currentSize += points;
         GameObject.Destroy(gameObject);
+    }
+    public void PlaySfx()
+    {
+        if (flag == 2)
+        {
+            audioSource.PlayOneShot(sfx[0]);
+        }
+        else if (flag == 1 || flag == 0)
+        {
+            audioSource.PlayOneShot(sfx[1]);
+        }
     }
 }
