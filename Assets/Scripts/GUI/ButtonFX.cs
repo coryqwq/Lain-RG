@@ -26,6 +26,9 @@ public class ButtonFX : MonoBehaviour
     public GameObject audioObject;
     AudioSource audioSource;
 
+    public GameObject exitPrompt;
+    public GameObject[] button;
+
     void Start()
     {
         audioObject = GameObject.Find("AudioObject");
@@ -82,6 +85,22 @@ public class ButtonFX : MonoBehaviour
         video.SetActive(false);
     }
 
+    public void DisplayExitPrompt()
+    {
+        exitPrompt.SetActive(true);
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(button[0]);
+    }
+
+    public void CancelExitPrompt()
+    {
+        exitPrompt.SetActive(false);
+        FindObjectOfType<EventSystem>().SetSelectedGameObject(button[1]);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void PlaySfx0()
     {
         audioSource.clip = sfx[0];
@@ -96,5 +115,10 @@ public class ButtonFX : MonoBehaviour
     {
         audioSource.clip = sfx[2];
         audioSource.Play();
+    }
+
+    public void PlaySfx0OneShot()
+    {
+        audioSource.PlayOneShot(sfx[0]);
     }
 }

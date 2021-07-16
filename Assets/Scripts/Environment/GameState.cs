@@ -114,20 +114,27 @@ public class GameState : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "WinScene")
         {
-            PlayerPrefs.SetInt("level unlock", PlayerPrefs.GetInt("level select") + 1);
             SetVideoClip(PlayerPrefs.GetInt("level select"));
             StartCoroutine(DelayStartVideo(3));
-            StartCoroutine(DelayEndVideo((float)videoPlayer.length));
+            StartCoroutine(DelayEndVideo((float)videoPlayer.length + 1));
             PlayerPrefs.SetInt("load", 0);
 
-            if(PlayerPrefs.GetInt("level unlock") != 5)
+            if(PlayerPrefs.GetInt("level unlock") < 4)
             {
-                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 3, "TransitionScene"));
-
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 4, "TransitionScene"));
             }
             else
             {
-                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 6, "TitleScene"));
+                StartCoroutine(DelaySceneLoad((float)videoPlayer.length + 8, "TransitionScene"));
+            }
+
+            if (PlayerPrefs.GetInt("level select") < 4 && PlayerPrefs.GetInt("complete") == 0)
+            {
+                PlayerPrefs.SetInt("level unlock", PlayerPrefs.GetInt("level select") + 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("complete", 1);
             }
         }
     }
@@ -176,7 +183,7 @@ public class GameState : MonoBehaviour
         if (winSceneText[0] != null)
         {
             winSceneText[0].SetActive(false);
-            if(PlayerPrefs.GetInt("level unlock") != 5)
+            if(PlayerPrefs.GetInt("level unlock") != 4)
             {
                 winSceneText[1].SetActive(true);
             }

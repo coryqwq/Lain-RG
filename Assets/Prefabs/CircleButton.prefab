@@ -193,9 +193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 9166242803362884643}
   points:
-  - 5
-  - 10
-  - 20
+  - 3
+  - 7
+  - 15
   flag: 0
   elasped: 0
   sfx:

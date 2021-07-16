@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe1b98ff9db8b347a7b476077d7e68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSys: {fileID: 0}
   videoPlayer: {fileID: 0}
   video: {fileID: 0}
   videoClip: []
@@ -1015,6 +1016,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1890ea755ced14b48b6fad6655a9d98e, type: 3}
   - {fileID: 8300000, guid: d55f71aea2a073b4cbfac4bd0f4b53ca, type: 3}
   audioObject: {fileID: 0}
+  exitPrompt: {fileID: 0}
+  button: []
 --- !u!114 &918900729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e7bf182358c74babb643bf4180c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
   distance: 0.97
   maxDistance: 4
 --- !u!212 &1111665206
@@ -1372,7 +1375,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3e65759ca2f3b424ba3ad32c9a6a5efe, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34901962}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1426,7 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e7bf182358c74babb643bf4180c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   distance: 6.69
   maxDistance: 20
 --- !u!212 &1380830716
@@ -1470,7 +1473,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cd560d124ee39944781f371092f2b3d1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6666667}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1489,7 +1492,7 @@ Transform:
   m_GameObject: {fileID: 1380830714}
   m_LocalRotation: {x: -0, y: -0, z: 0.29404032, w: 0.955793}
   m_LocalPosition: {x: 13.092245, y: -14.217777, z: 16.26291}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 983616062}
   m_RootOrder: 1
